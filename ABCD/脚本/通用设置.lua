@@ -142,6 +142,8 @@ SetSaveIndex("异界地图","2")
 SetSaveIndex("项链|戒指|爪|匕首|法杖|单手剑|细剑|单手斧|单手锤|符文匕首|短杖|战杖|弓|长杖|双手剑|双手斧|双手锤|腰带|手套|鞋子|头盔","3|4")
 SetSaveIndex("主动技能宝石|辅助技能宝石|珠宝|命运卡|衣服|盾|箭袋|地图碎片","4")
 SetSaveIndex("生命药剂|魔力药剂|复合药剂|功能药剂","4")
+SetSaveIndex(nil,"4","啟蒙輔助","Metadata/Items/Gems/SupportGemAdditionalXP")--技能寶石
+SetSaveIndex(nil,"4","賦予輔助","Metadata/Items/Gems/SupportGemAdditionalLevel")--技能寶石
 SetSaveIndex(nil,"4","鍊魔眼睛","Metadata/Items/Metamorphosis/MetamorphosisEye")
 SetSaveIndex(nil,"4","预言","Metadata/Items/Currency/CurrencyItemisedProphecy")
 SetSaveIndex(nil,"4","鏈結石","Metadata/Items/Currency/CurrencyRerollSocketLinks")
@@ -166,15 +168,15 @@ g_yuyanCnt=nil				--够多少银币去预言，小于10银币或填nil将不会触发 如果设定去预言
 --SetNotMapGoMap(className,cnt) 设置无地图或未到等级时要刷的剧情地图 className字符串型 地图类名 cnt=次数
 SetNotMapGoMap("2_9_1",10)	--无地图时刷血色通道
 
-g_yiJieLv=90				--够了多少级才去刷异界
+g_yiJieLv=70				--够了多少级才去刷异界
 g_checkSellMapCnt=100		--地图超过这个数量才会检测出售地图
 g_destroyNoUseMap=true		--销毁上面设置不使用的地图 nil或false为不销毁
-g_mapUseFuHaoLv=78			--大于等于多少级对蓝图使用富豪石 nil为永远不使用
-g_mapUseZengFuLv=78			--大于等于多少级对蓝图使用增幅石 nil为永远不使用
+g_mapUseFuHaoLv=76			--大于等于多少级对蓝图使用富豪石 nil为永远不使用
+g_mapUseZengFuLv=72			--大于等于多少级对蓝图使用增幅石 nil为永远不使用
 g_mapUseDianJingLv=76		--大于等于多少级对白图使用点金石 nil为永远不使用
 g_mapUseTuiBianLv=72		--大于等于多少级对白图使用蜕变石 nil为永远不使用
-g_mapUseJiHuiLv=83			--大于等于多少级对白图使用机会石 nil为永远不使用
-g_mapUseWaErLv=83			--大于等于多少级对白、蓝地图使用瓦尔宝珠 nil为永远不使用
+g_mapUseJiHuiLv=80			--大于等于多少级对白图使用机会石 nil为永远不使用
+g_mapUseWaErLv=80			--大于等于多少级对白、蓝地图使用瓦尔宝珠 nil为永远不使用
 g_mapUseDingZiLv=nil			--大于等于多少级使用制图钉 nil为永远不使用
 g_noUseMapLv=0				--不使用、不捡多少阶及以上的地图 nil或0为忽略 设置优先的地图除外
 
@@ -312,11 +314,11 @@ mapClassName="1_1_town"
 
 SetNeedBuyGoodsData("知识卷轴","Metadata/Items/Currency/CurrencyIdentification",nil,"传送卷轴","Metadata/Items/Currency/CurrencyPortal")
 SetNeedBuyGoodsData("传送卷轴","Metadata/Items/Currency/CurrencyPortal",nil,"蜕变石","Metadata/Items/Currency/CurrencyUpgradeToMagic")
---SetNeedBuyGoodsData("蜕变石","Metadata/Items/Currency/CurrencyUpgradeToMagic",200,"增幅石","Metadata/Items/Currency/CurrencyAddModToMagic")
---SetNeedBuyGoodsData("增幅石","Metadata/Items/Currency/CurrencyAddModToMagic",200,"改造石","Metadata/Items/Currency/CurrencyRerollMagic")
---SetNeedBuyGoodsData("改造石","Metadata/Items/Currency/CurrencyRerollMagic",nil,"工匠石","Metadata/Items/Currency/CurrencyRerollSocketNumbers")
---SetNeedBuyGoodsData("工匠石","Metadata/Items/Currency/CurrencyRerollSocketNumbers",100,"链结石","Metadata/Items/Currency/CurrencyRerollSocketLinks")
---SetNeedBuyGoodsData("链结石","Metadata/Items/Currency/CurrencyRerollSocketLinks",100,"机会石","Metadata/Items/Currency/CurrencyUpgradeRandomly")
+SetNeedBuyGoodsData("蜕变石","Metadata/Items/Currency/CurrencyUpgradeToMagic",200,"增幅石","Metadata/Items/Currency/CurrencyAddModToMagic")
+SetNeedBuyGoodsData("增幅石","Metadata/Items/Currency/CurrencyAddModToMagic",200,"改造石","Metadata/Items/Currency/CurrencyRerollMagic")
+SetNeedBuyGoodsData("改造石","Metadata/Items/Currency/CurrencyRerollMagic",200,"工匠石","Metadata/Items/Currency/CurrencyRerollSocketNumbers")
+SetNeedBuyGoodsData("工匠石","Metadata/Items/Currency/CurrencyRerollSocketNumbers",100,"链结石","Metadata/Items/Currency/CurrencyRerollSocketLinks")
+SetNeedBuyGoodsData("链结石","Metadata/Items/Currency/CurrencyRerollSocketLinks",100,"机会石","Metadata/Items/Currency/CurrencyUpgradeRandomly")
 --SetNeedBuyGoodsData("机会石","Metadata/Items/Currency/CurrencyUpgradeRandomly",100,"重铸石","Metadata/Items/Currency/CurrencyConvertToNormal")
 --SetNeedBuyGoodsData("重铸石","Metadata/Items/Currency/CurrencyConvertToNormal",nil,"后悔石","Metadata/Items/Currency/CurrencyPassiveRefund")
 --SetNeedBuyGoodsData("后悔石","Metadata/Items/Currency/CurrencyPassiveRefund",nil,"点金石","Metadata/Items/Currency/CurrencyUpgradeToRare")
