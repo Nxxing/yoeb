@@ -16,7 +16,7 @@
 2、函数型：函数名(参数1,参数2) 这样的就是函数型 由函数名与若干个参数组成 参数被半角括号()套起来
 ]]
 ------------------基本设置
-g_needMinimizeGame=true			--最小化遊戲窗口 true为最小化 false或nil为不最小化
+g_needMinimizeGame=false			--最小化遊戲窗口 true为最小化 false或nil为不最小化
 g_imBoss=false					--如果是仓库号要为true 挂机号为false
 g_attackDis=50					--攻击距离
 g_yiJieTimeOut=15*60			--异界地图内的超时时间 单位为秒 如果未设置就会用g_timeOut *是乘号 这里为15乘以60=15分钟
@@ -65,13 +65,25 @@ AddNeedBuySkillTime(2,"a2q8")
 AddNeedBuySkillTime(1,"a2q8")
 -----A3
 AddNeedBuySkillTime(2,"a3q1")
+AddNeedBuySkillTime(1,"a3q1")
 AddNeedBuySkillTime(2,"a3q11")
+AddNeedBuySkillTime(1,"a3q11")
+AddNeedBuySkillTime(2,"a3q3")
 AddNeedBuySkillTime(1,"a3q3")
+AddNeedBuySkillTime(2,"a3q4")
 AddNeedBuySkillTime(1,"a3q4")
 AddNeedBuySkillTime(3,"a3q8")
+AddNeedBuySkillTime(2,"a3q8")
+AddNeedBuySkillTime(1,"a3q8")
 AddNeedBuySkillTime(3,"a3q9")
+AddNeedBuySkillTime(2,"a3q9")
+AddNeedBuySkillTime(1,"a3q9")
 AddNeedBuySkillTime(3,"a3q12")
+AddNeedBuySkillTime(2,"a3q12")
+AddNeedBuySkillTime(1,"a3q12")
 AddNeedBuySkillTime(3,"a3q10")
+AddNeedBuySkillTime(2,"a3q10")
+AddNeedBuySkillTime(1,"a3q10")
 ----A4
 AddNeedBuySkillTime(3,"a4q2")
 AddNeedBuySkillTime(2,"a4q2")
@@ -168,15 +180,15 @@ g_yuyanCnt=nil				--够多少银币去预言，小于10银币或填nil将不会触发 如果设定去预言
 --SetNotMapGoMap(className,cnt) 设置无地图或未到等级时要刷的剧情地图 className字符串型 地图类名 cnt=次数
 SetNotMapGoMap("2_9_1",10)	--无地图时刷血色通道
 
-g_yiJieLv=70				--够了多少级才去刷异界
+g_yiJieLv=90				--够了多少级才去刷异界
 g_checkSellMapCnt=100		--地图超过这个数量才会检测出售地图
 g_destroyNoUseMap=true		--销毁上面设置不使用的地图 nil或false为不销毁
-g_mapUseFuHaoLv=76			--大于等于多少级对蓝图使用富豪石 nil为永远不使用
-g_mapUseZengFuLv=72			--大于等于多少级对蓝图使用增幅石 nil为永远不使用
+g_mapUseFuHaoLv=78			--大于等于多少级对蓝图使用富豪石 nil为永远不使用
+g_mapUseZengFuLv=78			--大于等于多少级对蓝图使用增幅石 nil为永远不使用
 g_mapUseDianJingLv=76		--大于等于多少级对白图使用点金石 nil为永远不使用
 g_mapUseTuiBianLv=72		--大于等于多少级对白图使用蜕变石 nil为永远不使用
-g_mapUseJiHuiLv=80			--大于等于多少级对白图使用机会石 nil为永远不使用
-g_mapUseWaErLv=80			--大于等于多少级对白、蓝地图使用瓦尔宝珠 nil为永远不使用
+g_mapUseJiHuiLv=83			--大于等于多少级对白图使用机会石 nil为永远不使用
+g_mapUseWaErLv=83			--大于等于多少级对白、蓝地图使用瓦尔宝珠 nil为永远不使用
 g_mapUseDingZiLv=nil			--大于等于多少级使用制图钉 nil为永远不使用
 g_noUseMapLv=0				--不使用、不捡多少阶及以上的地图 nil或0为忽略 设置优先的地图除外
 
@@ -314,11 +326,11 @@ mapClassName="1_1_town"
 
 SetNeedBuyGoodsData("知识卷轴","Metadata/Items/Currency/CurrencyIdentification",nil,"传送卷轴","Metadata/Items/Currency/CurrencyPortal")
 SetNeedBuyGoodsData("传送卷轴","Metadata/Items/Currency/CurrencyPortal",nil,"蜕变石","Metadata/Items/Currency/CurrencyUpgradeToMagic")
-SetNeedBuyGoodsData("蜕变石","Metadata/Items/Currency/CurrencyUpgradeToMagic",200,"增幅石","Metadata/Items/Currency/CurrencyAddModToMagic")
-SetNeedBuyGoodsData("增幅石","Metadata/Items/Currency/CurrencyAddModToMagic",200,"改造石","Metadata/Items/Currency/CurrencyRerollMagic")
-SetNeedBuyGoodsData("改造石","Metadata/Items/Currency/CurrencyRerollMagic",200,"工匠石","Metadata/Items/Currency/CurrencyRerollSocketNumbers")
-SetNeedBuyGoodsData("工匠石","Metadata/Items/Currency/CurrencyRerollSocketNumbers",100,"链结石","Metadata/Items/Currency/CurrencyRerollSocketLinks")
-SetNeedBuyGoodsData("链结石","Metadata/Items/Currency/CurrencyRerollSocketLinks",100,"机会石","Metadata/Items/Currency/CurrencyUpgradeRandomly")
+--SetNeedBuyGoodsData("蜕变石","Metadata/Items/Currency/CurrencyUpgradeToMagic",200,"增幅石","Metadata/Items/Currency/CurrencyAddModToMagic")
+--SetNeedBuyGoodsData("增幅石","Metadata/Items/Currency/CurrencyAddModToMagic",200,"改造石","Metadata/Items/Currency/CurrencyRerollMagic")
+--SetNeedBuyGoodsData("改造石","Metadata/Items/Currency/CurrencyRerollMagic",nil,"工匠石","Metadata/Items/Currency/CurrencyRerollSocketNumbers")
+--SetNeedBuyGoodsData("工匠石","Metadata/Items/Currency/CurrencyRerollSocketNumbers",100,"链结石","Metadata/Items/Currency/CurrencyRerollSocketLinks")
+--SetNeedBuyGoodsData("链结石","Metadata/Items/Currency/CurrencyRerollSocketLinks",100,"机会石","Metadata/Items/Currency/CurrencyUpgradeRandomly")
 --SetNeedBuyGoodsData("机会石","Metadata/Items/Currency/CurrencyUpgradeRandomly",100,"重铸石","Metadata/Items/Currency/CurrencyConvertToNormal")
 --SetNeedBuyGoodsData("重铸石","Metadata/Items/Currency/CurrencyConvertToNormal",nil,"后悔石","Metadata/Items/Currency/CurrencyPassiveRefund")
 --SetNeedBuyGoodsData("后悔石","Metadata/Items/Currency/CurrencyPassiveRefund",nil,"点金石","Metadata/Items/Currency/CurrencyUpgradeToRare")

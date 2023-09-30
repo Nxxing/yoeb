@@ -13,8 +13,8 @@ g_shengHuaJob="锐眼"
 --设置使用的武器 支持(盾}箭袋}爪}匕首|法杖|单手剑|细剑|单手斧|单手锤|符文匕首|短杖|战杖|弓|长杖|双手剑|双手斧|双手锤) 如果需要用两样中间用|分开
 SetUseWeapon("弓|箭袋")
 --设置自己用的装备类型 
-SetUseZhuangBeiTypeData("StrDex","衣服")
-SetUseZhuangBeiTypeData("Dex","头盔")
+SetUseZhuangBeiTypeData("StrDex|Dex","衣服")
+SetUseZhuangBeiTypeData("Dex|StrDex","头盔")
 SetUseZhuangBeiTypeData("Str|StrInt|Int","手套")
 SetUseZhuangBeiTypeData("Str|StrDex|Dex","鞋子")
 SetUseZhuangBeiTypeData("StrInt","项链")
@@ -29,20 +29,22 @@ g_duobiHpVal=0.2
 --pos=指定位置 nil为自动选择 2为衣服 3为主武器 4为副武器 5为头盔 6为项链 7为左戒指 8为右戒指 9为护手 10为鞋子 11为腰带
 --nType 有效场景 nil为无论何时都有效 0为没在刷异界才有效 1为只在刷异界才有效
 
-SetNeedSkillLineData(93,"火砲砲塔,nil|元素攻擊傷害輔助,nil|快速攻擊輔助,nil|多重圖騰輔助,nil",nil,nil,nil)
-SetNeedSkillLineData(94,"閃電箭矢,nil|附加冰冷傷害輔助,nil|元素攻擊傷害輔助,nil|三體輔助,nil|啟發輔助,nil|幻影射手輔助,nil",nil,nil,nil)
-SetNeedSkillLineData(95,"鋼筋鐵骨,nil|元素淨化,nil|憤怒,nil",nil,nil,nil)
-SetNeedSkillLineData(96,"擊中時印記輔助,nil|狙擊者印記,nil|召喚寒冰魔像,nil",nil,nil,nil)
-SetNeedSkillLineData(97,"魔改箭矢輔助,nil|狂怒,nil|暴擊獲得暴擊球輔助,nil|腐蝕箭矢,nil",nil,nil,nil)
+SetNeedSkillLineData(93,"燃燒箭矢,nil|氣勢輔助,nil",2,nil,nil)
+SetNeedSkillLineData(94,"火砲砲塔,nil|元素攻擊傷害輔助,nil|快速攻擊輔助,nil|多重圖騰輔助,nil",nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,30)
+SetNeedSkillLineData(95,"魔改箭矢輔助,nil|狂怒,nil|暴擊獲得暴擊球輔助,nil|腐蝕箭矢,nil",nil,nil,nil)
+SetNeedSkillLineData(96,"鋼筋鐵骨,nil|元素淨化,nil|憤怒,nil",nil,nil,nil)
+SetNeedSkillLineData(97,"狙擊者印記,nil|召喚寒冰魔像,nil|擊中時印記輔助,nil",nil,nil,nil)
 SetNeedSkillLineData(98,"彈片砲塔,nil|快速攻擊輔助,nil|猛毒投射物輔助,nil|齊射輔助,nil",30,nil,nil)
-SetNeedSkillLineData(99,"電流箭矢,nil|附加冰冷傷害輔助,nil|元素攻擊傷害輔助,nil|幻影射手輔助,nil|氣勢輔助,nil",30,nil,nil)
-SetNeedSkillLineData(100,"燃燒箭矢,nil|氣勢輔助,nil",2,nil,nil)
+SetNeedSkillLineData(99,"電流箭矢,nil|附加冰冷傷害輔助,nil|元素攻擊傷害輔助,nil|幻影射手輔助,nil|附加火焰傷害輔助,nil",16,nil,nil)
+SetNeedSkillLineData(100,"閃電箭矢,nil|附加冰冷傷害輔助,nil|元素攻擊傷害輔助,nil|三體輔助,nil|啟發輔助,nil|幻影射手輔助,nil|附加火焰傷害輔助,nil",nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,12)
+
 
 --添加攻击技能 name=技能名 className=技能类名 noLine=不在直线就能攻击 挑选攻击技能会从上到下寻找，要把厉害的技能加在前面
 AddAttackSkillData("閃電箭矢","Lightning Arrow",false,50,0)--添加攻击技能
 AddAttackSkillData("電流箭矢","Galvanic Arrow",false,50,0)--添加攻击技能
 AddAttackSkillData("燃燒箭矢","Burning Arrow")
 AddAttackSkillData("普通攻击","melee")
+SetDebuffSkill(nil,"snipers_mark",nil,"curse_snipers_mark")--狙擊者印記
 
 --SetSkillLimitMaxLv(name,className,maxLv)--设置技能宝石最大等级 name=技能宝石物品名 className=技能宝石物品类名 maxLv=限制的最大等级
 SetSkillLimitMaxLv("鋼筋鐵骨",nil,14)
@@ -108,7 +110,7 @@ SetZhengTiColorVarData(2,0,0,1,nil,50)
 SetZhengTiColorVarData(3,0,5,1,nil,600,true)
 SetZhengTiColorVarData(3,0,4,1,nil,500,true)
 SetZhengTiColorVarData(3,0,3,1,nil,400,true)
-SetZhengTiColorVarData(3,0,2,1,nil,300,true)
+SetZhengTiColorVarData(3,0,3,0,nil,300,true)
 SetZhengTiColorVarData(3,0,2,0,nil,200,true)
 SetZhengTiColorVarData(3,0,1,0,nil,10)
 
@@ -127,7 +129,6 @@ SetZhengTiColorVarData(9,2,0,1,nil,300,true)
 SetZhengTiColorVarData(9,1,0,1,nil,200,true)
 SetZhengTiColorVarData(9,0,0,1,nil,100)
 
-SetZhengTiColorVarData(10,1,3,0,nil,400,true)
 SetZhengTiColorVarData(10,2,2,0,nil,400,true)
 SetZhengTiColorVarData(10,1,2,0,nil,300,true)
 SetZhengTiColorVarData(10,0,2,0,nil,200,true)
@@ -135,14 +136,16 @@ SetZhengTiColorVarData(10,0,1,0,nil,100)
 
 
 
---AddShengJiZhuangBeiGoodsData("点金石","Metadata/Items/Currency/CurrencyUpgradeToRare",0,30,0)--主线生效 超过50级就用点金点白色装备
---AddShengJiZhuangBeiGoodsData("富豪石","Metadata/Items/Currency/CurrencyUpgradeMagicToRare",1,30,0)--主线生效 超过50级就用富豪点蓝色装备
+AddShengJiZhuangBeiGoodsData("点金石","Metadata/Items/Currency/CurrencyUpgradeToRare",0,50,0)--主线生效 超过50级就用点金点白色装备
+AddShengJiZhuangBeiGoodsData("富豪石","Metadata/Items/Currency/CurrencyUpgradeMagicToRare",1,50,0)--主线生效 超过50级就用富豪点蓝色装备
 
 --掉落率+稀有率 异界时才有效
 --SetAtuoChangeEquipData("暗影|野蛮人|决斗者|女巫|游侠|圣堂武僧","戒指|项链|腰带|鞋子|手套|衣服|头盔|法杖|盾","base_item_found_rarity_+%",0.5,2)--基礎物品掉落品質 +%
 --SetAtuoChangeEquipData("暗影|野蛮人|决斗者|女巫|游侠|圣堂武僧","戒指|项链|腰带|鞋子|手套|衣服|头盔|法杖|盾","base_item_found_quantity_+%",1.5,2)--物品掉落數量增加 %
 
 --高级换装设置
+SetGaoJiHuanZhuangData("游侠","简易之袍","Metadata/Items/Armours/BodyArmours/BodyInt1","无尽之衣","Tabula Rasa")
+SetGaoJiHuanZhuangData("游侠","金缕帽","Metadata/Items/Armours/Helmets/HelmetDex1","金缕帽","Goldrim")
 
 
 --SetTaskShengJiData(taskClassName,taskIndex,shengjiMapClassName,needLv)--设置跑图时升级 taskClassName=任务类名 taskIndex=任务索引 nil为忽略，只匹配任务类名 shengjiMapClassName=要刷的地图类名 needLv=升级到多少级为止
