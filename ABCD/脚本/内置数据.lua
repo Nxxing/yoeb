@@ -52,7 +52,7 @@ SetUseTuTengData("artillery_ballista_totem","Metadata/Monsters/Totems/MortarTote
 --buffClassName 增益类名 字符串型 如果有这个增益 就不使用
 --funcNeedUse 使用的检测函数，你们不需要填，是给作者用来添加特殊技能的接口 填nil忽略
 AddUseSkillData(2,"暗影迷踪","phase_run")
-AddUseSkillData(1,"凋零之步","wlither")
+AddUseSkillData(1,"凋零之步","slither")
 AddUseSkillData(1,"骨制战甲","bone_armour")
 AddUseSkillData(1,"熔岩护盾","molten_shell_barrier")
 AddUseSkillData(1,"钢铁之肤","steelskin")
